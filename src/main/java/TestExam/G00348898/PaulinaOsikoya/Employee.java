@@ -29,11 +29,11 @@ private int age; //over 18
         }
 
         //name
-        if(name.length()>5 || name.length()<=22){
-            this.name = name;
-        }else{
+        if(name.length()<5 || name.length()>22){
 
-            throw  new IllegalArgumentException("invalid name");
+            throw  new IllegalArgumentException("invalid name in setting");
+        }else{
+            this.name = name;
         }
 
         //pps
@@ -84,11 +84,11 @@ private int age; //over 18
     }
 
     public void setName(String name) {
-        if(name.length()>5 || name.length()<=22){
-            this.name = name;
+        if(name.length()<5 || name.length()>22){
 
+            throw  new IllegalArgumentException("invalid name in setting");
         }else{
-            throw  new IllegalArgumentException("invalid name");
+            this.name = name;
         }
     }
 

@@ -53,8 +53,8 @@ public class EmployeeTest {
         myEmployee.setTitle("Ms");
         assertEquals(myEmployee.getTitle(),"Ms");
         //name
-        myEmployee.setName("john");
-        assertEquals(myEmployee.getName(),"john");
+        myEmployee.setName("paulina");
+        assertEquals(myEmployee.getName(),"paulina");
         //pps
         myEmployee.setPps("123456");
         assertEquals(myEmployee.getPps(),"123456");
@@ -97,6 +97,18 @@ public class EmployeeTest {
         });
     }
 
+    @Test
+    @DisplayName("Invalid Name")
+    void testNameInvalid(TestInfo testInfo, TestReporter testReporter)
+    {
+        //title
+        //Mr
+        myEmployee.setName("jo0000i");
+        assertEquals(myEmployee.getName(),"jo0000i");
+       Assertions.assertThrows(IllegalArgumentException.class, ()->{
+           myEmployee.setName("joi");
+        });
+    }
 
     @Test
     @DisplayName("Invalid EmpType")
@@ -151,8 +163,8 @@ public class EmployeeTest {
     }
 
     @Test
-    @DisplayName("invalidvalid Constructor")
-    void testConstructorinvalid(TestInfo testInfo, TestReporter testReporter)
+    @DisplayName("invalidvalid Constructor age")
+    void testConstructorinvalidage(TestInfo testInfo, TestReporter testReporter)
     {
 
         Assertions.assertThrows(IllegalArgumentException.class, ()->{
@@ -161,6 +173,60 @@ public class EmployeeTest {
 
     }
 
+    @Test
+    @DisplayName("invalidvalid Constructor name")
+    void testConstructorinvalidname(TestInfo testInfo, TestReporter testReporter)
+    {
+
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+            new Employee("Ms","joi","123456",8712345,"full-time",16);
+        });
+
+    }
+
+    @Test
+    @DisplayName("invalidvalid Constructor title")
+    void testConstructorinvalidtitle(TestInfo testInfo, TestReporter testReporter)
+    {
+
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+            new Employee("s","joi","123456",8712345,"full-time",16);
+        });
+
+    }
+
+    @Test
+    @DisplayName("invalidvalid Constructor pps")
+    void testConstructorinvalidpss(TestInfo testInfo, TestReporter testReporter)
+    {
+
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+            new Employee("Ms","joi","156",8712345,"full-time",16);
+        });
+
+    }
+
+    @Test
+    @DisplayName("invalidvalid Constructor phone")
+    void testConstructorinvalidphone(TestInfo testInfo, TestReporter testReporter)
+    {
+
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+            new Employee("Ms","joi","1456",8712345,"full-time",16);
+        });
+
+    }
+
+    @Test
+    @DisplayName("invalidvalid Constructor emptype")
+    void testConstructorinvalidemptype(TestInfo testInfo, TestReporter testReporter)
+    {
+
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+            new Employee("Ms","joi","123456",8712345,"futime",16);
+        });
+
+    }
     /**************************POST TEST DONE**************************/
     @AfterAll
     @DisplayName("Ending the Test")
