@@ -1,6 +1,6 @@
 # Employee Management System Test Exam
 
-This repository contains the Java implementation of an Employee Management System, developed as part of an assignment exam for my degree module. The exam required not only the development of the system but also its documentation and upload to GitHub.
+This repository contains the Java implementation of an Employee Management System, developed as part of an assignment exam for my degree module Software Engineering with test. The exam required not only the development of the system but also its documentation and upload to GitHub.
 
 ## Purpose
 
